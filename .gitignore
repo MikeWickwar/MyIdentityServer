@@ -1,0 +1,92 @@
+# Build Folders
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+Generated_Code/
+
+# Logs
+*.log
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+*.nuspec
+
+# NuGet v3's project.json files produces more ignore entries
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Entity Framework Core Migrations
+[Mm]igrations/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Rider
+.idea/
+.idea_modules/
+
+# VS Code
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.vscode/launch.json
+
+# ASP.NET
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Styles
+*.sass-cache
+
+# Npm/Yarn
+node_modules/
+
+# Environment Variables
+.env
+
+# Publish outputs
+.publish/
+
+# Visual Studio Code
+.history/
+tmp/
+
+# ASP.NET Core Secrets
+secrets.json
+
+# Local History for Rider
+.idea
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode
+
+# Local History for VS
+.vscode
+.idea/
+
+# Mac system files
+.DS_Store
