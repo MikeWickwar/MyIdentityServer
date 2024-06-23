@@ -23,7 +23,7 @@ namespace MyIdentityServer
             {
                 new Client
                 {
-                    ClientId = "client",
+                    ClientId = "client_credentials_client",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     ClientSecrets =
                     {
