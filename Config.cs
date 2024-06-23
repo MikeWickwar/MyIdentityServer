@@ -24,10 +24,14 @@ namespace MyIdentityServer
                 new Client
                 {
                     ClientId = "client",
-                    AllowedGrantTypes = GrantTypes.Code,
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
                     ClientSecrets =
                     {
                         new Secret("secret".Sha256())
+                    },
+                    Claims = new List<ClientClaim>
+                    {
+                        new ClientClaim("custom_claim_from_config", "custom_value")
                     },
                     RedirectUris = { "https://localhost:5001/signin-oidc" },
                     PostLogoutRedirectUris = { "https://localhost:5001/signout-callback-oidc" },
