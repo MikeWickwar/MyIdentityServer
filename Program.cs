@@ -11,6 +11,16 @@ using Duende.IdentityServer;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configure Kestrel to listen on custom HTTP and HTTPS ports
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(8085); // HTTP
+    options.ListenAnyIP(8441, listenOptions =>
+    {
+        listenOptions.UseHttps("./https-aspnetcore.pfx", "password");
+    }); // HTTPS
+});
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

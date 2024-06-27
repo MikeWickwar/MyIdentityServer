@@ -1,3 +1,9 @@
+# To Do 
+1. host in the cloud
+2. make a migration for the current set up 
+3. document the current claims and client they belong to 
+    - The current ids has one client named client currently and one api resource scope ("rick_sanchez_api")and one client scope ("client_scope_c137")
+
 # Duende IdentityServer with PostgreSQL
 
 This project sets up a Duende IdentityServer integrated with ASP.NET Core Identity and PostgreSQL. It provides a secure and extensible foundation for handling user authentication and authorization in your applications.

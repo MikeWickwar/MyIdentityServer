@@ -59,7 +59,8 @@ node_modules/
 .env
 
 # Publish outputs
-.publish/
+publish/
+publish/*
 
 # Visual Studio Code
 .history/
