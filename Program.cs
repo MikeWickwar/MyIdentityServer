@@ -17,7 +17,7 @@ builder.WebHost.ConfigureKestrel(options =>
     options.ListenAnyIP(8085); // HTTP
     options.ListenAnyIP(8441, listenOptions =>
     {
-        listenOptions.UseHttps("./https-aspnetcore.pfx", "password");
+        listenOptions.UseHttps();
     }); // HTTPS
 });
 
