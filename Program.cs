@@ -33,7 +33,10 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 
 var migrationsAssembly = typeof(Program).Assembly.GetName().Name;
 
-builder.Services.AddIdentityServer()
+builder.Services.AddIdentityServer(options =>
+    {
+        options.KeyManagement.Enabled = false;
+    })
     .AddConfigurationStore(options =>
     {
         options.ConfigureDbContext = b => b.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"),

@@ -25,9 +25,6 @@ project.lock.json
 project.fragment.lock.json
 artifacts/
 
-# Entity Framework Core Migrations
-[Mm]igrations/
-
 # ASP.NET Scaffolding
 ScaffoldingReadMe.txt
 
