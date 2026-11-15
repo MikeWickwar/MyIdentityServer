@@ -47,6 +47,7 @@ builder.Services.AddIdentityServer(options =>
         options.ConfigureDbContext = b => b.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"),
             sql => sql.MigrationsAssembly(migrationsAssembly));
     })
+    .AddAspNetIdentity<ApplicationUser>()
     .AddDeveloperSigningCredential();
 
 var app = builder.Build();
