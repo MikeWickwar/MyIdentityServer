@@ -18,9 +18,9 @@ namespace MyIdentityServer.Controllers
         }
 
         [HttpGet]
-        public IActionResult Register()
+        public IActionResult Register(string? returnUrl)
         {
-            return View();
+            return View(new RegisterViewModel { ReturnUrl = returnUrl });
         }
 
         [HttpPost]
@@ -33,7 +33,9 @@ namespace MyIdentityServer.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    return string.IsNullOrWhiteSpace(model.ReturnUrl)
+                        ? RedirectToAction("Index", "Home")
+                        : LocalRedirect(model.ReturnUrl);
                 }
                 foreach (var error in result.Errors)
                 {
