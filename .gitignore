@@ -92,3 +92,10 @@ NuGet.Config
 .appdata/
 .dotnet-cli/
 .nuget-packages/
+
+# Local certificates, signing keys, and publish output
+*.pfx
+*.p12
+*.pem
+keys/
+publish/
