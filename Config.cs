@@ -36,7 +36,33 @@ namespace MyIdentityServer
                     RedirectUris = { "https://localhost:5001/signin-oidc" },
                     PostLogoutRedirectUris = { "https://localhost:5001/signout-callback-oidc" },
                     AllowedScopes = { "openid", "profile", "api1" }
+                },
+                new Client
+                {
+                    ClientId = "ghostdot-bff",
+                    ClientName = "GhostDot local BFF",
+                    AllowedGrantTypes = GrantTypes.Code,
+                    RequirePkce = true,
+                    RequireClientSecret = true,
+                    ClientSecrets =
+                    {
+                        new Secret(GetRequiredGhostDotBffClientSecret().Sha256())
+                    },
+                    RedirectUris = { "https://localhost:7240/signin-oidc" },
+                    PostLogoutRedirectUris = { "https://localhost:7240/signout-callback-oidc" },
+                    AllowedScopes = { "openid", "profile", "api1" }
                 }
             };
+
+        private static string GetRequiredGhostDotBffClientSecret()
+        {
+            string? secret = Environment.GetEnvironmentVariable("GHOSTDOT_BFF_CLIENT_SECRET");
+            if (string.IsNullOrWhiteSpace(secret))
+            {
+                throw new InvalidOperationException("Set GHOSTDOT_BFF_CLIENT_SECRET before starting the local IdentityServer.");
+            }
+
+            return secret;
+        }
     }
 }

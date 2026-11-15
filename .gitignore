@@ -91,3 +91,7 @@ $RECYCLE.BIN/
 
 # Mac system files
 .DS_Store
+NuGet.Config
+.appdata/
+.dotnet-cli/
+.nuget-packages/

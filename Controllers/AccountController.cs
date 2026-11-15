@@ -44,9 +44,9 @@ namespace MyIdentityServer.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login()
+        public IActionResult Login(string? returnUrl)
         {
-            return View();
+            return View(new LoginViewModel { ReturnUrl = returnUrl });
         }
 
         [HttpPost]
@@ -57,7 +57,9 @@ namespace MyIdentityServer.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return string.IsNullOrWhiteSpace(model.ReturnUrl)
+                        ? RedirectToAction("Index", "Home")
+                        : LocalRedirect(model.ReturnUrl);
                 }
                 if (result.IsLockedOut)
                 {

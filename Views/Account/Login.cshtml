@@ -1,6 +1,7 @@
 @model MyIdentityServer.ViewModels.LoginViewModel
 
 <form asp-action="Login" method="post">
+    <input asp-for="ReturnUrl" type="hidden" />
     <div asp-validation-summary="All" class="text-danger"></div>
 
     <div class="form-group">

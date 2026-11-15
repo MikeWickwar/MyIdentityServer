@@ -48,6 +48,11 @@ builder.Services.AddIdentityServer()
 
 var app = builder.Build();
 
+if (app.Environment.IsDevelopment())
+{
+    await DatabaseInitializer.InitializeAsync(app.Services);
+}
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
